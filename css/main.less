@@ -2,7 +2,25 @@
 @import "less\bootstrap.less";
 //Import Dotnetnuke Fixes - Things that bootstrap Breaks
 @import "dnnFixes.less";
-//Import Your Custom Styles
-@import "custom.less"; 
+
+
+body {
+    background-color:#eee;
+}
+
+.container{
+    background-color:#fff;
+}
+
+
+
+@media (max-width: @screen-xs-max) {
+    .container
+    {
+        background-color: #000;
+    }
+  }
+
+
 
     

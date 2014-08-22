@@ -6200,3 +6200,8 @@ body {
 .container {
   background-color: #fff;
 }
+@media (max-width: 767px) {
+  .container {
+    background-color: #000;
+  }
+}
