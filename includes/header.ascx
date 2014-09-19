@@ -26,7 +26,7 @@
 
 
 
-<dnn:DnnCssInclude ID="general" runat="server" FilePath="css/main.css" PathNameAlias="SkinPath" Priority="100" />
+<dnn:DnnCssInclude ID="general" runat="server" FilePath="css/main.min.css" PathNameAlias="SkinPath" Priority="100" />
 
 
 
