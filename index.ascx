@@ -1,18 +1,7 @@
 <!--#include file="includes/header.ascx" -->
 
 
-    <div class="container-fluid" style="background-color:red">
-
-
     
-     
-        <div class="row">
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4">.col-md-4</div>
-      </div>
-
-    </div>
 
     <div class="container">
 
