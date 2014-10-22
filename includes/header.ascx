@@ -13,6 +13,10 @@
 <%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
+<%--Register DDR Menu--%>
+<%@ Register TagPrefix="ddr" TagName="MENU" src="~/DesktopModules/DDRMenu/Menu.ascx" %>
+<%@ Register TagPrefix="ddr" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
+
 
 <!--
     PICK ONE OF THESE AND USE IT IN THE DNN META TAG BELOW
@@ -52,6 +56,9 @@
 
 
 <header>
+
+
+    <ddr:MENU MenuStyle="razorMenu" runat="server" />
 
 
     <nav class="navbar navbar-default" role="navigation">

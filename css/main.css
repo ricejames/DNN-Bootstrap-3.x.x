@@ -6201,8 +6201,9 @@ body {
   background-color: #fff;
 }
 @media (max-width: 767px) {
-  .container {
-    background-color: #000;
-  }
+  /*.container
+    {
+        background-color: #000; 
+    }*/
 }
 /*# sourceMappingURL=main.css.map */

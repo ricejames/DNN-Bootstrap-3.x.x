@@ -1,0 +1,9 @@
+@{ var root = Model.Source.root;
+
+
+   var SkinLocation = Model.SkinPath;
+   
+  }
+
+
+@SkinLocation
