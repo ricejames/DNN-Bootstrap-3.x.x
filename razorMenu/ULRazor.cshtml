@@ -17,15 +17,66 @@
                 //if (node.Last) { cssClasses.Add("last"); }
                 
                 if (node.Selected) { cssClasses.Add("active"); }
-                if (node.HasChildren()) { cssClasses.Add("dropdown-toggle");   }
+                if (node.HasChildren()) {
+                    cssClasses.Add("dropdown-toggle"); 
+                    
+                }
                 
                 var classString = new HtmlString((cssClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", cssClasses.ToArray()) + "\""));
                 
                 <li @classString>
-                    @if (node.Enabled)
+                    @if(node.Enabled && node.HasChildren()){
+                        <a href="@node.Url" data-toggle="dropdown">@node.Text <span class="caret"></span></a>
+                    }
+                    
+                    else if (node.Enabled)
                     {
                         <a href="@node.Url">@node.Text</a>
                     }
+                    
+                    else
+                    {
+                        @node.Text
+                    }
+                    @RenderChildNodes(node.Children)
+                </li>
+            }
+        </ul>
+    }
+}
+
+
+
+@helper RenderChildNodes(IList<MenuNode> nodes)
+{
+    if (nodes.Count > 0)
+    {
+       <ul class="dropdown-menu" role="menu">
+            @foreach (var node in nodes)
+            {
+                var cssClasses = new List<string>();
+                
+                //if (node.First) { cssClasses.Add("first"); }
+                //if (node.Last) { cssClasses.Add("last"); }
+                
+                if (node.Selected) { cssClasses.Add("active"); }
+                if (node.HasChildren()) {
+                    cssClasses.Add("dropdown-toggle"); 
+                    
+                }
+                
+                var classString = new HtmlString((cssClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", cssClasses.ToArray()) + "\""));
+                
+                <li @classString>
+                    @if(node.Enabled && node.HasChildren()){
+                        <a href="@node.Url" data-toggle="dropdown">@node.Text <span class="caret"></span></a>
+                    }
+                    
+                    else if (node.Enabled)
+                    {
+                        <a href="@node.Url">@node.Text</a>
+                    }
+                    
                     else
                     {
                         @node.Text
@@ -36,4 +87,9 @@
         </ul>
     }
 }
+
+
+
+
+
 @RenderNodes(root.Children)

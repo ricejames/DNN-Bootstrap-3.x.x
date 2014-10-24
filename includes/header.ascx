@@ -18,6 +18,9 @@
 <%@ Register TagPrefix="ddr" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
 
 
+
+
+
 <!--
     PICK ONE OF THESE AND USE IT IN THE DNN META TAG BELOW
     <meta name="viewport" content="width=device-width, initial-scale=1">
