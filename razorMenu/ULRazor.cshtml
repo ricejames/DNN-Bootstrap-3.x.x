@@ -1,40 +1,11 @@
-@using System;
-@using System.Collections;
-@using System.Collections.Generic;
-@using System.Collections.Specialized;
-@using System.Globalization;
-@using System.IO;
-@using System.Text.RegularExpressions;
-@using System.Web;
-@using System.Web.UI;
-@using System.Web.UI.HtmlControls;
-@using System.Web.UI.WebControls;
-@using DotNetNuke.Common;
-@using DotNetNuke.Common.Utilities;
-@using DotNetNuke.Entities.Host;
-@using DotNetNuke.Entities.Modules;
-@using DotNetNuke.Entities.Portals;
-@using DotNetNuke.Entities.Profile;
-@using DotNetNuke.Entities.Users;
-@using DotNetNuke.Framework;
-@using DotNetNuke.Instrumentation;
-@using DotNetNuke.Security;
-@using DotNetNuke.Security.Membership;
-@using DotNetNuke.Security.Permissions;
-@using DotNetNuke.Services.Authentication;
-@using DotNetNuke.Services.Authentication.OAuth;
-@using DotNetNuke.Services.Exceptions;
-@using DotNetNuke.Services.Localization;
-@using DotNetNuke.Services.Mail;
-@using DotNetNuke.Services.Messaging;
-@using DotNetNuke.Services.Messaging.Data;
-@using DotNetNuke.UI.Skins.Controls;
-@using DotNetNuke.UI.UserControls;
-@using DotNetNuke.UI.WebControls;
-
 @using DotNetNuke.Web.DDRMenu;
 @using System.Dynamic;
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@* User Login References *@
+@using DotNetNuke.Entities.Users;
+@using DotNetNuke.Security.Membership;
+@using DotNetNuke.Services.Authentication;
 
 @{ var root = Model.Source.root; }
 
