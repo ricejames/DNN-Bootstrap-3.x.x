@@ -9,7 +9,7 @@
 
 @{ var root = Model.Source.root; }
 
-@helper RenderNodes(IList<DotNetNuke.Web.DDRMenu.MenuNode> nodes)
+@helper RenderNodes(IList<MenuNode> nodes)
 {
 
 
@@ -57,7 +57,7 @@
 
 
 
-@helper RenderChildNodes(IList<DotNetNuke.Web.DDRMenu.MenuNode> nodes)
+@helper RenderChildNodes(IList<MenuNode> nodes)
 {
     if (nodes.Count > 0)
     {
