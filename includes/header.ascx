@@ -114,7 +114,7 @@
 
 
 
-<div class="container">
+
     	<nav class="navbar navbar-inverse no-border-radius" id="main_navbar" role="navigation">
     		<div class="container-fluid">
     			<!-- Brand and toggle get grouped for better mobile display -->
@@ -584,12 +584,12 @@
     												<div class="carousel-inner">
     													<div class="item active">
     														<div class="embed-responsive embed-responsive-16by9">
-    															<img class="embed-responsive-item" src="images/cars.jpg">
+    															<img class="embed-responsive-item" src="http://placehold.it/450x250">
     														</div>
     													</div>
     													<div class="item">
     														<div class="embed-responsive embed-responsive-16by9">
-    															<img class="embed-responsive-item" src="images/animals.jpg">
+    															<img class="embed-responsive-item" src="http://placehold.it/450x250">
     															<div class="carousel-caption">
     																<h3>The Eurasian eagle-owl</h3>
     																<p>(Bubo bubo) is a species of eagle-owl resident in much of Eurasia. It is sometimes called the European eagle-owl</p>
@@ -598,17 +598,17 @@
     													</div>
     													<div class="item">
     														<div class="embed-responsive embed-responsive-16by9">
-    															<img class="embed-responsive-item" src="images/nature.jpg">
+    															<img class="embed-responsive-item" src="http://placehold.it/450x250">
     														</div>
     													</div>
     													<div class="item">
     														<div class="embed-responsive embed-responsive-16by9">
-    															<img class="embed-responsive-item" src="images/city.jpg">
+    															<img class="embed-responsive-item" src="http://placehold.it/450x250">
     														</div>
     													</div>
     													<div class="item">
     														<div class="embed-responsive embed-responsive-16by9">
-    															<img class="embed-responsive-item" src="images/space.jpg">
+    															<img class="embed-responsive-item" src="http://placehold.it/450x250">
     														</div>
     													</div>
     												</div>
@@ -799,7 +799,7 @@
     			</div>
     		</div>
     	</nav>
-    </div>
+    
 
 
  
