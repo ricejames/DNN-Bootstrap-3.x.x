@@ -123,7 +123,7 @@
     				<span class="sr-only">Toggle navigation</span>
     				<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
     				</button>
-    				<a class="navbar-brand" href="index.html"><i class="fa fa-home"></i> Brand</a>
+    				<a class="navbar-brand" href="index.html"><i class="fa fa-home"></i> Brand - Allan</a>
     			</div>
     			<!-- Collect the nav links, forms, and other content for toggling -->
     			<div class="collapse navbar-collapse" id="navbar-collapse-1">
