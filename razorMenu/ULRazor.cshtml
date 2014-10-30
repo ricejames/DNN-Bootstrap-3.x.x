@@ -18,7 +18,6 @@
 
 
 
-@RenderNodes(root.Children)
 
 
 
@@ -109,7 +108,7 @@
                 <li class="divider"></li>
                 <!-- dropdown default -->
                 <li class="dropdown-short">
-                    <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle" aria-expanded="true">
+                    <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle" aria-expanded="false">
                         <i class="fa fa-bars"></i>&nbsp;<span class="hidden-sm">Short</span><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -117,8 +116,43 @@
                         <li class="divider"></li>
                         <li class="dropdown-right-onhover no-fix">
                             <!-- Menu item with submenu -->
-                            <a href="javascript:;"><i class="fa fa-bars"></i> With submenu<span class="desc">Show on hover &amp; don't fix</span></a>
-
+                            <a href="javascript:;" data-toggle="collapse" data-target="#id_3ac0aa8ea29f2302" class="dropdown-toggle collapsed"><i class="fa fa-bars"></i> With submenu<span class="desc">Show on hover &amp; don't fix</span></a>
+                            <!-- start submenu -->
+                            <ul class="dropdown-menu collapse" id="id_3ac0aa8ea29f2302">
+                                <li class="dropdown-header">Submenu header</li>
+                                <li class="divider"></li>
+                                <li class="dropdown-right-onhover">
+                                    <!-- Menu item with submenu -->
+                                    <a href="javascript:;" data-toggle="collapse" data-target="#id_c7a0dc0830f7d307" class="dropdown-toggle collapsed"><i class="fa fa-bars"></i> With submenu<span class="desc">Show on hover &amp; fix on click</span></a>
+                                    <!-- start submenu -->
+                                    <ul class="dropdown-menu collapse" id="id_c7a0dc0830f7d307">
+                                        <li class="dropdown-header">Submenu header</li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" class="">Default item<span class="desc">Default description</span></a></li>
+                                        <li class="active"><a href="#" class="">Active item<span class="desc">Active description</span></a></li>
+                                        <li class="disabled"><a href="#" class="">Disabled item<span class="desc">Disabled description</span></a></li>
+                                        <li class="open"><a href="#" class="">Open item<span class="desc">Open description</span></a></li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <p><a href="#&quot;"><i class="fa fa-link"></i> Regular link<span class="desc">Regular link description</span></a></p>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                    <!-- end submenu -->
+                                </li>
+                                <li><a href="#" class="">Default item<span class="desc">Default description</span></a></li>
+                                <li class="active"><a href="#" class="">Active item<span class="desc">Active description</span></a></li>
+                                <li class="disabled"><a href="#" class="">Disabled item<span class="desc">Disabled description</span></a></li>
+                                <li class="open"><a href="#" class="">Open item<span class="desc">Open description</span></a></li>
+                                <li class="divider"></li>
+                                <li>
+                                    <p><a href="#&quot;"><i class="fa fa-link"></i> Regular link<span class="desc">Regular link description</span></a></p>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                            <!-- end submenu -->
                         </li>
                         <li class="divider"></li>
                         <li><a href="#">Default item<span class="desc">Default description</span></a></li>
@@ -129,14 +163,18 @@
                         <li>
                             <p><a href="#&quot;">Regular link<span class="desc">Regular link description</span></a></p>
                         </li>
-
-
+                        <li class="divider"></li>
+                        <li>
+                            <div class="navbar-form navbar-right" role="search" style="margin-left: -15px;">
+                                <div class="input-group"><input type="text" placeholder="input" class="form-control"><span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i>&nbsp;</button></span></div>
+                            </div>
+                        </li>
                     </ul>
                 </li>
 
 
 
-                @helper RenderNodes(IList<MenuNode> nodes)
+@helper RenderNodes(IList<MenuNode> nodes)
 {
 
 
@@ -162,9 +200,73 @@
                 var classString = new HtmlString((cssClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", cssClasses.ToArray()) + "\""));
 
                 <li @classString>
+
                     @if (node.Enabled && node.HasChildren())
                     {
-                        <a href="@node.Url" data-toggle="dropdown">@node.Text <span class="caret"></span></a>
+                        
+                        <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle" aria-expanded="false">
+                            <i class="fa fa-bars"></i>
+                            @node.Text <span class="caret"></span>
+                        </a>
+                    }
+
+                    else if (node.Enabled)
+                    {
+                        <a href="@node.Url">@node.Text</a>
+                    }
+
+                    else
+                    {
+                        @node.Text
+                    }
+                    @RenderChildNodes(node.Children)
+                </li>
+
+                <li class="divider"></li>
+            }
+        </ul>
+    }
+}
+
+
+
+@helper RenderChildNodes(IList<MenuNode> nodes)
+{
+
+
+    if (nodes.Count > 0)
+    {
+
+        <ul class="dropdown-menu">
+
+            <li class="dropdown-header">
+                @nodes[0].Parent.Text
+                </li>
+
+            @foreach (var node in nodes)
+            {
+                var cssClasses = new List<string>();
+
+                //if (node.First) { cssClasses.Add("first"); }
+                //if (node.Last) { cssClasses.Add("last"); }
+
+                //if (node.Selected) { cssClasses.Add("active"); }
+
+                //if (node.HasChildren())
+                //{
+                //    cssClasses.Add("dropdown-toggle");
+
+                //}
+
+                var classString = new HtmlString((cssClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", cssClasses.ToArray()) + "\""));
+
+
+<li @classString>
+                    @if (node.Enabled && node.HasChildren())
+                    {
+                        <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle" aria-expanded="false">
+                            @node.Text <span class="caret"></span>
+                        </a>
                     }
 
                     else if (node.Enabled)
@@ -178,6 +280,8 @@
                     }
                     @*@RenderNodes(node.Children)*@
                 </li>
+
+                <li class="divider"></li>
             }
         </ul>
     }
@@ -185,7 +289,7 @@
 
 
 
-@RenderNodes(root.Children)
+                @RenderNodes(root.Children)
 
 
 
@@ -200,7 +304,7 @@
                 <!-- divider -->
                 <li class="divider"></li>
                 <!-- dropdown disabled -->
-                <li class="dropdown-short disabled hidden-sm hidden-md"><a>Disabled</a></li>
+                <li><a href="#">Normal</a></li>
                 <!-- divider -->
                 <li class="divider hidden-sm hidden-md"></li>
                 <!-- wide -->
@@ -251,8 +355,6 @@
                 <li class="divider"></li>
 
             </ul>
-
-
 
 
 
