@@ -47,17 +47,6 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
-<!-- MegaNavbar Styles -->
-    <link rel="stylesheet" type="text/css" href="<%= SkinPath %>css/MegaNavbar/MegaNavbar.css"/>
-    <link rel="stylesheet" type="text/css" href="<%= SkinPath %>css/MegaNavbar/navbar-inverse.css" title="inverse">
-    <link rel="stylesheet" type="text/css" href="<%= SkinPath %>css/MegaNavbar/animation/animation.css" title="inverse">
-
-<!--MegaNavbar Highlight-->
-    <link href="documentation/assets/plugins/highlight/styles/github.css" rel="stylesheet" type="text/css" />
-    
-    <script src="documentation/assets/plugins/highlight/highlight.pack.js" type="text/javascript"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
 
 
 
