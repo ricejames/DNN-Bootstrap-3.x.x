@@ -1,0 +1,65 @@
+@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+ 
+@helper RenderNodes(IEnumerable<MenuNode> nodes, int level)
+{
+    if (nodes.Any())
+    {
+        var dropdown = level == 0 ? "nav navbar-nav" : "dropdown-menu";
+        var topLevelId = level == 0 ? Model.ControlID : null;
+ 
+        <ul id="@topLevelId" class="@dropdown">
+        @foreach (var node in nodes)
+        {
+            var cssClasses = new List<string> { "level-" + level };
+            if (node.HasChildren())
+            {
+                if (level == 0) { cssClasses.Add("dropdown"); } else { cssClasses.Add("dropdown-submenu"); }
+            }
+            
+            cssClasses.Add("node-" + node.TabId);
+            if (node.Selected) { cssClasses.Add("active"); }
+            var classes = new HtmlString((cssClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", cssClasses.ToArray()) + "\""));
+          
+ 
+            <li class="@classes">
+                
+                @if (node.HasChildren())
+                {
+                    if (level == 0)
+                    {
+                        if (node.Enabled)
+                        {
+                            <a href="@node.Url" target="@node.Target" class="dropdown-toggle" >@node.Text <b class="caret"></b></a>
+                        }
+                        else
+                        {
+                            <a class="dropdown-toggle">@node.Text <b class="caret"></b></a>
+                        }
+                    }
+                    else
+                    {
+                        <a href="@node.Url" target="@node.Target">@node.Text <b class="caret"></b></a>
+                    }
+                    @RenderNodes(node.Children, level + 1)
+                }
+                else if (node.Enabled)
+                {
+                    <a href="@node.Url" target="@node.Target">@node.Text</a>
+                }
+                else
+                {
+                    @node.Text
+                }
+ 
+                
+            </li>
+        }
+        </ul>
+    }
+}
+ 
+<div class="nav-wrap">
+    @RenderNodes(Model.Source.root.Children, 0)
+</div>
