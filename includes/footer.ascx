@@ -10,6 +10,10 @@
                     <dnn:login runat="server" id="dnnLogin" />
                 </p>
 
+                <p>
+                    <dnn:Copyright runat="server" id="dnnCopyright" />
+                </p>
+
             </div>
         </div>
     </div>
