@@ -5,7 +5,7 @@
     <div class="container content-bg">
 
       
-
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       <div class="row">
             <div class="col-xs-12" id="ContentPane" runat="server" visible="false"></div>
       </div>
