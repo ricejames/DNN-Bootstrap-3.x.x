@@ -6588,4 +6588,20 @@ body {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+/*Search Result Page Styling*/
+.dnnSearchBoxPanel {
+  max-width: none;
+}
+.dnnSearchBoxPanel .dnnSearchBox {
+  margin-right: 10px;
+}
+.dnnSearchResultPanel {
+  max-width: none;
+}
+.dnnSearchBox > .dnnSearchBox_advanced > .dnnSearchBox_advanced_label {
+  height: 30px;
+}
+input#dnnSearchResult_dnnSearchBox_input {
+  width: 90% !important;
+}
 /*# sourceMappingURL=main.css.map */
