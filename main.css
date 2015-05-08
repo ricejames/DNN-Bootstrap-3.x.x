@@ -6578,16 +6578,6 @@ button.close {
 .dnnCheckbox .mark {
   background: none;
 }
-body {
-  background-color: #eee;
-}
-.content-bg {
-  background-color: #fff;
-}
-.no-gutter [class*="col-"] {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
 /*Search Result Page Styling*/
 .dnnSearchBoxPanel {
   max-width: none;
@@ -6603,5 +6593,22 @@ body {
 }
 input#dnnSearchResult_dnnSearchBox_input {
   width: 90% !important;
+}
+/*Varibles*/
+/*http://www.thedotmack.com/2013/11/18/less-media-query-mixins/*/
+body {
+  background-color: #eee;
+}
+@media (max-width: 991px) {
+  body {
+    background-color: #000;
+  }
+}
+.content-bg {
+  background-color: #fff;
+}
+.no-gutter [class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 /*# sourceMappingURL=main.css.map */

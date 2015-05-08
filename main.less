@@ -3,9 +3,25 @@
 //Import Dotnetnuke Fixes - Things that bootstrap Breaks
 @import "less/custom/dnnFixes.less";
 
+/*Varibles*/
+
+@RS-Red: #d52027;
+@RS-Soft-Grey: #eff0f1;
+@RS-Strong-Grey: #545555;
+
+/*http://www.thedotmack.com/2013/11/18/less-media-query-mixins/*/
+@xxs: ~'max-width: 377px';
+@xs: ~'max-width: @{screen-xs-max}';
+@sm: ~'max-width: @{screen-sm-max}';
+@md: ~'max-width: @{screen-md-max}';
 
 body {
     background-color:#eee;
+
+    @media(@sm)
+        {
+            background-color:#000;
+        }
 }
 
 .content-bg{
@@ -20,36 +36,9 @@ body {
   } 
 }
 
+ 
 
 
-
-/*Search Result Page Styling*/
-
-.dnnSearchBoxPanel
-{
-    max-width: none;
-
-
-    .dnnSearchBox
-    {
-        margin-right: 10px;
-    }
-}
-
-.dnnSearchResultPanel
-{
-    max-width: none;
-}
-
-.dnnSearchBox > .dnnSearchBox_advanced > .dnnSearchBox_advanced_label
-{
-    height: 30px;
-}
-
-input#dnnSearchResult_dnnSearchBox_input
-{
-    width: 90% !important;
-}
 
 
     
