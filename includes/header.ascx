@@ -63,5 +63,5 @@
 
 
 <header>
-    <ddr:MENU MenuStyle="razorMenu" runat="server" />
+    <ddr:MENU MenuStyle="BootstrapHover2Levels" runat="server" />
 </header>
